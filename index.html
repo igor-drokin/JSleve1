@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1 - задание 
+        var a = 1, b = 1, c, d;
+        c = ++a; alert(c);           // 2 >инкремент выполняется до присваивания
+        d = b++; alert(d);           // 1 >инкремент выполняется после присваивания
+        c = (2 + ++a); alert(c);     // 5 > должно было быть 4, но а теперь = 2 на 2 строчки выше
+        d = (2 + b++); alert(d);     // 4 > b стало 2 на 2строчки выше
+        alert(a);                    // 3 дважды был инкремент
+        alert(b);                    // 3 важды был инкремент
+
+        // 2 - задание ;
+        var a = 2;
+        var x = 1 + (a *= 2); // x= 1+(2*2)=5
+
+        // 3 - задание ;
+        var a = -10;
+        var b = -2;
+        var result
+
+        if (a >= 0 && b >= 0) {
+            result = Math.abs(a - b)
+        }
+        else if (a < 0 && b < 0) {
+            result = a * b
+        }
+        else {
+            result = a + b
+        }
+        console.log(result)
+
+        // 4 - задание ;
+        var a = parseInt((Math.random() * 15 + 0).toFixed(0))
+        switch (a) {
+            case 0: console.log(a++)
+            case 1: console.log(a++)
+            case 2: console.log(a++)
+            case 3: console.log(a++)
+            case 4: console.log(a++)
+            case 5: console.log(a++)
+            case 6: console.log(a++)
+            case 7: console.log(a++)
+            case 8: console.log(a++)
+            case 9: console.log(a++)
+            case 10: console.log(a++)
+            case 11: console.log(a++)
+            case 12: console.log(a++)
+            case 13: console.log(a++)
+            case 14: console.log(a++)
+            case 15: console.log(a++)
+        }
+
+        // 4 - задание рекурсия ;
+        var a = parseInt((Math.random() * 15 + 0).toFixed(0))
+        function recurs(a) {
+            if (a <= 15) {
+                console.log(a)
+                recurs(++a);
+            }
+        }
+        recurs(a);
+
+        // 5 - задание 
+        function sum(a, b) {
+            return a + b
+        }
+        function subtraction(a, b) {
+            return a - b
+        }
+        function division(a, b) {
+            return a / b
+        }
+        function multiplication(a, b) {
+            return a * b
+        }
+        // 6 - задание 
+        function mathOperation(a, b, operation) {
+            var result
+            switch (true) {
+                case operation == "sum":
+                    result = sum(a, b)
+                    break;
+                case operation == "subtraction":
+                    result = subtraction(a, b)
+                    break;
+                case operation == "division":
+                    result = division(a, b)
+                    break;
+                case operation == "multiplication":
+                    result = multiplication(a, b)
+                    break;
+                default:
+                    console.log("неверное значение переменной:" + operation);
+            }
+            return result
+        }
+        var x = mathOperation(10, 5, 'division')
+        console.log(x)
+
+        // 7 - задание
+        var n = null;
+        var zero = 0;
+
+        if (n == zero) {
+            console.log('они равны')
+        }
+        else if (n > zero) {
+            console.log('Null больше')
+        }
+        else if (n >= zero) {
+            console.log('Null больше или равен') // результат больше или равен, так как оператор сравнение приводит null к 0, а нестрогое равенство нет
+        }
+
+        // 8 - задание
+        function power(val, pow) {
+            if (pow >= 0) {
+                if (pow == 1) {
+                    return val;
+                }
+                else if (pow == 0) {
+                    return 1;
+                }
+                else {
+                    return val * power(val, pow - 1);
+                }
+            }
+            else {
+                return val = 1 / (val / power(val, pow + 1));
+            }
+        }
+        var powerResult = power(2, -10)
+        console.log(powerResult)
+
+    </script>
+</body>
+
+</html>
